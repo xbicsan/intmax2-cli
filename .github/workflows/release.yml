@@ -32,7 +32,7 @@ jobs:
       - name: Package binary
         run: |
           cd target/release
-          tar czvf ../../../${{ github.event.repository.name }}-${{ matrix.target }}.tar.gz ${{ github.event.repository.name }}
+          tar czvf ../../${{ github.event.repository.name }}-${{ matrix.target }}.tar.gz ${{ github.event.repository.name }}
           cd -
 
       - name: Upload artifact
