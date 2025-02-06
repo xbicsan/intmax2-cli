@@ -27,12 +27,12 @@ jobs:
           override: true
 
       - name: Build binary
-        run: cargo build --release
+        run: cargo build --release --target ${{ matrix.target }}
 
       - name: Package binary
         run: |
-          cd target/release
-          tar czvf ../../${{ github.event.repository.name }}-${{ matrix.target }}.tar.gz ${{ github.event.repository.name }}
+          cd target/${{ matrix.target }}/release
+          tar czvf ../../../${{ github.event.repository.name }}-${{ matrix.target }}.tar.gz ${{ github.event.repository.name }}
           cd -
 
       - name: Upload artifact
