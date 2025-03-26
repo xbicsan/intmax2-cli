@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
 RUN rustup toolchain install nightly-2024-09-17 \
     && rustup default nightly
 
-RUN --mount=type=cache,target=/user/local/cargo/registry \
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo install cargo-chef --version ^0.1
 
 # for build base
