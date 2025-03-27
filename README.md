@@ -133,6 +133,3 @@ install [typos-cli](https://github.com/crate-ci/typos):
 ```bash
 brew install typos-cli
 ```
-
-
-touch
