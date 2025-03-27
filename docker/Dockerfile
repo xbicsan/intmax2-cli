@@ -8,7 +8,6 @@ RUN rustup toolchain install nightly-2024-09-17 \
 
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/usr/local/cargo/git \
-    --mount=type=cache,target=/usr/local/cargo/bin \
     cargo install cargo-chef --version ^0.1
 
 # for build base
