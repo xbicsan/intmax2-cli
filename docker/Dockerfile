@@ -38,6 +38,8 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
 COPY . .
 ENV SQLX_OFFLINE=true
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/local/cargo/git \
+    --mount=type=cache,target=/usr/src/app/target \
     cargo build -r
 
 FROM debian:bookworm-slim
