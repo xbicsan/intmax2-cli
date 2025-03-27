@@ -38,8 +38,6 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo chef cook --release --recipe-path recipe.json
 COPY . .
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    --mount=type=cache,target=/usr/local/cargo/git \
-    --mount=type=cache,target=/usr/src/app/target \
     cargo build -r
 
 FROM debian:bookworm-slim
