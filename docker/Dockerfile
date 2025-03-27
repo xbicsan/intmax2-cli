@@ -1,5 +1,5 @@
 # for build tools
-FROM --platform=$BUILDPLATFORM rust:latest AS tools
+FROM --platform=$BUILDPLATFORM rust:1.85-bookworm AS tools
 RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
@@ -11,7 +11,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo install cargo-chef --version ^0.1
 
 # for build base
-FROM --platform=$BUILDPLATFORM rust:latest AS base
+FROM --platform=$BUILDPLATFORM rust:1.85-bookworm AS base
 RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
